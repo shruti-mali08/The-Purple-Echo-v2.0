@@ -4,6 +4,8 @@ An independent, non-commercial single-page application (SPA) and interactive dig
 
 **The Purple Echo** bridges modern frontend engineering with a deeply nested, scalable data architecture to deliver an immersive storytelling experience. The visual language is fully custom and themed around a celestial, outer-space aesthetic—drawing inspiration from BTS' *Arirang* era, *Mikrokosmos*, and stellar constellations like the Big Dipper.
 
+![The Purple Echo Home Page](./src/static/images/documentation/HomePage.png)
+
 ---
 
 ## 🎨 Architectural Evolution (v1 vs. v2)
@@ -53,12 +55,16 @@ The visual engine of the archive. It coordinates a multi-layered parallax-like b
 
 An isolated profile portal mounted detached from the standard DOM tree via `createPortal` to prevent layout clipping and z-index pollution.
 
+![RM Member Modal](./src/static/images/documentation/NamjoonMemberModal.png)
+
 * **Interaction Isolation:** Uses precise `event.stopPropagation()` handlers to restrict click bounds cleanly between the interactive container and the structural background overlay.
 * **Scroll Interception:** Captures global document scrolling behavior when launched, pinning the underlying document to preserve background layout placement.
 
 ### 🎵 `MusicTimeline`
 
 An interactive chronological browser governed by standard component state variables (`activeYear`).
+
+![Music Timeline](./src/static/images/documentation/MusicTimeline.png)
 
 * **Interactive Controls:** Integrates a state-bound custom slider featuring dot-style marks, a dark violet gradient rail, and a star-shaped thumb built via CSS `clip-path` that spins on focus.
 * **Dynamic Animation Pacing:** Uses the explicit `key={activeYear}` pattern to force-remount display containers upon data changes, automatically triggering fresh CSS fade-in animations as the user slides across years.
