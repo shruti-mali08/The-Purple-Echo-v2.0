@@ -1,0 +1,175 @@
+.spaceBackgroundWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+/* Pinned container for layers 1–4 */
+.backgroundLayers {
+    position: fixed;
+    top: -50vh;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Layer 1 — The Base */
+.baseLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 35%,
+            #2b2b2e 0%,
+            #1a1a1c 35%,
+            #0a0a0b 65%,
+            #000000 100%);
+}
+
+/* Layer 2 — The Texture / Dust */
+.textureLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.dustBlob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    mix-blend-mode: screen;
+}
+
+/* Dark plum blob, upper-left */
+.dustBlob--plum {
+    width: 60vw;
+    height: 60vw;
+    max-width: 700px;
+    max-height: 700px;
+    top: 1%;
+    left: -10%;
+    background: radial-gradient(circle,
+            rgba(60, 30, 60, 0.90) 0%,
+            rgba(60, 30, 60, 0) 70%);
+}
+
+/* Dark brown blob, lower-middle */
+.dustBlob--brown {
+    width: 55vw;
+    height: 55vw;
+    max-width: 650px;
+    max-height: 650px;
+    bottom: -15%;
+    right: 15%;
+    background: radial-gradient(circle,
+            rgba(58, 40, 30, 0.90) 0%,
+            rgba(58, 40, 30, 0) 70%);
+}
+
+/* Dark maroon blob, middle-ish, third accent */
+.dustBlob--maroon {
+    width: 45vw;
+    height: 45vw;
+    max-width: 550px;
+    max-height: 550px;
+    top: 25%;
+    left: 55%;
+    background: radial-gradient(circle,
+            rgba(70, 25, 35, 0.80) 0%,
+            rgba(70, 25, 35, 0) 70%);
+}
+
+.constellationLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+
+.constellationStars use {
+    
+    animation-name: twinkleStar;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: var(--star-delay, 0s);
+    animation-duration: var(--star-duration, 3s);  /* Ensures scale transform-origin stays pinned to coordinate */
+    transform-box: fill-box;
+}
+
+@keyframes twinkleStar {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(calc(var(--star-scale, 1) * 0.97));
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(calc(var(--star-scale, 1) * 1));
+    }
+}
+
+/* Layer 4 placeholder — built next */
+.fillerStarsLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.fillerStar {
+  position: absolute;
+  width: var(--star-size);
+  height: var(--star-size);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 calc(var(--star-size) * 2) rgba(255, 255, 255, 0.6);
+  opacity: var(--star-base-opacity);
+  animation-name: fillerTwinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: var(--star-delay);
+  animation-duration: var(--star-duration);
+  will-change: opacity, transform;
+}
+
+@keyframes fillerTwinkle {
+  0%, 100% {
+    opacity: calc(var(--star-base-opacity) * 0.5);
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: min(var(--star-base-opacity) * 1.3, 1);
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fillerStar {
+    animation: none;
+  }
+}
+
+/* UI Layer scrolls normally, sits above the fixed background */
+.uiLayer {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .starGlowCircle,
+    .starCore {
+        animation: none;
+    }
+}

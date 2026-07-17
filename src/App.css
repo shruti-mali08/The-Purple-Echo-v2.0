@@ -1,0 +1,78 @@
+body {
+  background-color: #454545;
+  color: white;
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  margin: 20px;
+  padding: 60px;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; /*Forces the app to be at least full screen height*/
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* SCROLLBAR STYLING */
+
+/* Standard syntax for modern Firefox and Safari */
+* {
+  scrollbar-color: #888888 transparent;
+}
+
+/* Legacy WebKit syntax for Chrome, Edge, and Opera */
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Required configuration to make WebKit custom scrollbars appear */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* FOOTER STYLING */
+
+.footer {
+  margin: auto 15px 0;
+  padding: 12px 0 8px;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContent {
+  width: 100%;
+  hr {
+    width: 100%;       /* Forces the line to stretch across the container */
+    border: none;      /* Removes default browser styling */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Clean, subtle white line */
+    margin-bottom: 15px; /* Adds space between the line and your links */
+  }
+}
+
+.footerText {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  a {
+    color: #ffffff;
+  }
+  p {
+    padding: 1%;
+  }
+}

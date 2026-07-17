@@ -1,0 +1,449 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.backdropOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(169, 169, 169, 0.253);
+    z-index: 99999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+.modalContainer {
+    position: relative;
+    width: 80vw;
+    height: 85vh;
+    margin: 5vh auto;
+    padding: 10px;
+}
+
+
+.wholeContainer {
+    width: 100%;
+    height: 100%;
+
+    border: 10px solid #000000;
+    border-radius: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background-color: black;
+
+    h2 {
+        color: white;
+    }
+}
+
+.closeButton {
+    margin-left: auto;
+    font-size: 2rem; 
+    cursor: pointer;
+    box-shadow: 2px 4px 4px rgba(255, 255, 255, 0.432);
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in; 
+}
+
+.closeButton:hover {
+    transform: translateY(-4px) scale(1.05); 
+    box-shadow: 2px 6px 4px rgba(255, 255, 255, 0.432);
+}
+
+/* --------------------------------------------------- */
+/* HEADER SECTION */
+
+.header {
+    display: flex;
+    margin: 10px;
+    width: auto;
+    height: 30%;
+    background:
+        linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .75)),
+        url("../../../static/images/members-modal-images/rm/header.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+}
+
+.nameAndRole {
+    margin-top: auto;
+
+    h1 {
+        margin: 5px;
+        padding: 5px 35px;
+        text-align: left;
+    }
+
+    h3 {
+        margin: 5px;
+        padding: 5px 35px;
+        text-align: left;
+    }
+}
+
+/* --------------------------------------------------- */
+/* HERO SECTION */
+
+.heroSection {
+    display: flex;
+    margin: 15px;
+    align-items: center;
+
+    img {
+        width: 25%;
+        height: auto;
+        border-radius: 10px;
+        margin: 10px;
+    }
+}
+
+.heroText {
+    h2 {
+        margin: 20px;
+    }
+
+    h4 {
+        margin: 10px;
+        text-align: right;
+    }
+
+    p {
+        margin: 10px 10px 10px 30px;
+        text-align: left;
+    }
+}
+
+.biodata {
+    display: flex;
+}
+
+.ageAndHeight {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.socials {
+    margin-left: 2rem;
+    display: flex; 
+    gap: 0.5rem; 
+}
+
+.socials .social-icon {
+    height: 2.5rem !important;  
+    width: 2.5rem !important;   
+}
+
+hr {
+    margin: 15px 20px;
+}
+
+/* --------------------------------------------------- */
+/* INTRO SECTION */
+
+.introSection {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+
+    h2,
+    p {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 20px;
+    }
+
+    img {
+        width: 25%;
+        height: auto;
+        border-radius: 10px;
+        margin: 10px 45px 10px auto;
+        align-self: center;
+    }
+}
+
+/* --------------------------------------------------- */
+/* DISCOGRAPHY SECTION */
+
+.discographySection {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+
+    h2 {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 20px;
+    }
+
+    ol li {
+        text-align: left;
+    }
+}
+
+/* --------------------------------------------------- */
+/* BT21 SECTION */
+
+.bt21Section {
+    margin: 15px;
+
+    h2 {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 20px;
+    }
+    p {
+        margin: 5px; 
+        padding: 0px 5px 10px ;
+    }
+    img {
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        text-align: left;
+        margin: 10px 20px;
+    }
+}
+
+.bt21SectionText {
+    display: flex;
+}
+
+.bt21SectionIntro {
+    flex: 0 0 25%;
+    align-self: center;
+    padding: 10px 0px 10px 40px;
+}
+
+/* --------------------------------------------------- */
+/* ACHIEVEMENTS SECTION */
+
+.achievementsSection {
+    align-items: center;
+    margin: 15px;
+    text-align: left;
+
+    h2 {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 20px;
+    }
+}
+
+/* --------------------------------------------------- */
+/* AWARDS SECTION */
+
+.awardsSection {
+    align-items: center;
+    margin: 15px;
+    text-align: left;
+
+    h2 {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 20px;
+    }
+    h3 {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 25px;
+    }
+}
+
+.featuredAwardsTable,
+.selectedAwardsTable,
+.restAwardsTable {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    table-layout: fixed;
+
+    border: 2px solid;
+    border-collapse: collapse;
+
+    th {
+        border-bottom: 2px solid;
+        border-left: 2px solid rgba(255, 255, 255);
+        border-right: 2px solid rgba(255, 255, 255);
+        text-align: left;
+        padding: 5px;
+    }
+
+    td {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 5px;
+    }
+}
+
+.restAwardsTable {
+    border-top: none;
+}
+
+/* --------- COLUMN WIDTHS --------- */
+
+.featuredAwardsTable th:nth-child(1),
+.selectedAwardsTable th:nth-child(1),
+.restAwardsTable td:nth-child(1) {
+    width: 30%;
+}
+
+.featuredAwardsTable th:nth-child(2),
+.selectedAwardsTable th:nth-child(2),
+.restAwardsTable td:nth-child(2) {
+    width: 10%;
+}
+
+.featuredAwardsTable th:nth-child(3),
+.selectedAwardsTable th:nth-child(3),
+.restAwardsTable td:nth-child(3) {
+    width: 30%;
+}
+
+.featuredAwardsTable th:nth-child(4),
+.selectedAwardsTable th:nth-child(4),
+.restAwardsTable td:nth-child(4) {
+    width: 15%;
+}
+
+.featuredAwardsTable th:nth-child(5),
+.selectedAwardsTable th:nth-child(5),
+.restAwardsTable td:nth-child(5) {
+    width: 15%;
+}
+
+/* --------------------------------------------------- */
+/* PHILANTHROPY SECTION */
+
+.philanthropicSection {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+}
+
+.philanthropicSectionText {
+    text-align: left;
+    width: 85%;
+
+    h2 {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 20px;
+    }
+}
+
+/* --------------------------------------------------- */
+/* ENDORSEMENTS SECTION */
+
+.endorsementsSection {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+}
+
+.endorsementSectionText {
+    text-align: left;
+    width: 85%;
+
+    h2 {
+        text-align: left;
+        margin: 5px;
+        padding: 10px 10px 10px 20px;
+    }
+
+    table {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        table-layout: fixed;
+
+        border: 2px solid;
+        border-collapse: collapse;
+
+        th {
+            border-bottom: 2px solid;
+            border-left: 2px solid rgba(255, 255, 255);
+            border-right: 2px solid rgba(255, 255, 255);
+            text-align: left;
+            padding: 5px;
+        }
+
+        td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 5px;
+        }
+    }
+}
+
+.endorsementTable th:nth-child(2) {
+    width: 30%;
+}
+
+.endorsementTable th:nth-child(3) {
+    width: 15%;
+}
+
+/* --------------------------------- */
+
+tbody tr:nth-child(even) {
+    background-color: rgba(149, 149, 149, 0.336);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(81, 81, 81, 0.336);
+}
+
+th {
+    background-color: rgba(149, 149, 149, 0.416);
+}
+
+/* --------------------------------- */
+/* EXPAND BUTTON STYLING */
+
+.expandButtonDiv {
+    display: flex;
+    justify-content: right;
+}
+
+.expandButton {
+    background-color: rgba(63, 63, 63, 0.758);
+    color: white;
+    margin-top: 15px;
+    margin-left: auto;
+    border: none;
+    text-decoration: underline;
+    padding: 15px 20px;
+    font-size: medium;
+    transition: background-color 0.5s ease, color 0.2s ease-in;
+}
+
+.expandButton:hover {
+    background-color: rgba(201, 201, 201, 0.758);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}

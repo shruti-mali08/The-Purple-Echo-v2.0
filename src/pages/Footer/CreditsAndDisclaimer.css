@@ -1,0 +1,87 @@
+.legalContainer {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem 0;
+        color: white;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #e0e0e0;
+        margin: 2rem 0;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+        color: white;
+    }
+
+    strong {
+        color: white;
+        font-weight: 600;
+    }
+}
+
+/* -------------------------------------------------------------- */
+/* INTELLECTUAL PROPERTY SECTION */
+
+.intellectualProperty h3 {
+    text-align: left;
+}
+
+/* -------------------------------------------------------------- */
+/* WEBSITE PURPOSE, CREDITS, AND DISCLAIMER TABLE */
+.purposeTable {
+    padding-bottom: 1.5rem;
+}
+
+.purposeTable tr,
+.creditsSectionTable tr,
+.disclaimerSectionTable tr {
+    background-color: transparent !important;
+}
+
+.purposeTable td,
+.creditsSectionTable td,
+.disclaimerSectionTable td {
+    text-align: left;
+    padding: 0.5rem 0 0 1rem;
+    vertical-align: top;
+}
+
+.purposeTable td:nth-child(1),
+.creditsSectionTable td:nth-child(1),
+.disclaimerSectionTable td:nth-child(1) {
+    width: 25%;
+
+}
+
+.purposeTable td:nth-child(2), 
+.creditsSectionTable td:nth-child(2),
+.disclaimerSectionTable td:nth-child(2) {
+    width: 75%;
+}
+
+/* -------------------------------------------------------------- */
+/* EMAIL LINK STYLING */
+
+.emailLink {
+    color: #8d71ff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.emailLink:hover {
+    color: #b19cff;
+}

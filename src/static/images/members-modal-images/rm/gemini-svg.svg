@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" style="background-color: #120f18;">
+  <defs>
+    <radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="20%" stop-color="#e2d5ff" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#9d72ff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#9d72ff" stop-opacity="0" />
+    </radialGradient>
+
+    <g id="star">
+      <circle cx="0" cy="0" r="24" fill="url(#star-glow)" />
+
+      <path d="M -20,0 Q 0,-1.5 20,0 Q 0,1.5 -20,0 Z" fill="#ffffff" opacity="0.8" />
+      
+      <path d="M 0,-20 Q -1.5,0 0,20 Q 1.5,0 0,-20 Z" fill="#ffffff" opacity="0.8" />
+
+      <circle cx="0" cy="0" r="2.5" fill="#ffffff" />
+    </g>
+  </defs>
+
+  <polyline 
+    points="80,80 220,160 340,200 480,240 520,380 660,340 710,180 480,240" 
+    fill="none" 
+    stroke="#ffffff" 
+    stroke-opacity="0.25" 
+    stroke-width="1.2" 
+    stroke-dasharray="3 3" 
+  />
+
+  <use href="#star" x="80" y="80" transform="scale(1.2)" transform-origin="80 80" />
+  <use href="#star" x="220" y="160" transform="scale(0.85)" transform-origin="220 160" opacity="0.9" />
+  <use href="#star" x="340" y="200" transform="scale(0.95)" transform-origin="340 200" />
+  
+  <use href="#star" x="480" y="240" transform="scale(0.8)" transform-origin="480 240" opacity="0.85" />
+  <use href="#star" x="520" y="380" transform="scale(1.1)" transform-origin="520 380" />
+  <use href="#star" x="660" y="340" transform="scale(0.9)" transform-origin="660 340" />
+  <use href="#star" x="710" y="180" transform="scale(1.25)" transform-origin="710 180" />
+</svg>

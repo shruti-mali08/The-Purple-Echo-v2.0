@@ -1,0 +1,175 @@
+.musicTimelineDiv {
+    height: 80%;
+    display: flex;
+    flex-direction: column; 
+    justify-items: center;
+}
+
+/* ------------------------------------------------------------- */
+/* SLIDER SECTION */
+
+.sliderDiv {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%; 
+    p {
+        font-size:medium;
+    }
+}
+
+.constellationSlider {
+    color: #6c63ff; 
+    padding: 20px 0 !important;
+}
+
+/* the line itself */
+.constellationSlider .MuiSlider-rail {
+    height: 3px;
+    background: linear-gradient(90deg, #2b2b52, #4b3b7c);
+    opacity: 1;
+}
+
+.constellationSlider .MuiSlider-track {
+    height: 3px;
+    background: linear-gradient(90deg, #8e7cff, #d6c8ff);
+    border: none;
+    box-shadow: 0 0 6px 1px rgba(214, 200, 255, 0.6);
+    transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: left, width;
+}
+
+/* the thumb, reshaped into a 5-point star */
+.constellationSlider .MuiSlider-thumb {
+    width: 30px;
+    height: 30px;
+    background: #fdf6e3; 
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%,
+        2% 35%, 39% 35%
+    );
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1), filter 0.2s ease;
+    will-change: left, filter, transform;
+}
+
+/* remove the default MUI focus/hover ring since it's a circle and clashes with the star */
+.constellationSlider .MuiSlider-thumb::before {
+    box-shadow: none;
+}
+
+.constellationSlider .MuiSlider-thumb:hover, 
+.constellationSlider .MuiSlider-thumb.Mui-focusVisible, 
+.constellationSlider .MuiSlider-thumb.Mui-active {
+    animation: constellationSpin 3s linear infinite;
+    z-index: 10;
+}
+
+/* spin animation */
+@keyframes constellationSpin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* tiny dots along the track for year marks */
+.constellationSlider .MuiSlider-mark {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #b9aaff;
+    opacity: 0.7;
+}
+
+.constellationSlider .MuiSlider-mark.MuiSlider-markActive {
+    background-color: #fdf6e3;
+    opacity: 1;
+}
+
+.constellationSlider .MuiSlider-markLabel {
+    color: #cfc6f7;
+    font-size: 0.75rem;
+}
+
+.constellationSlider .MuiSlider-markLabel.MuiSlider-markLabelActive {
+    color: #fdf6e3;
+    font-weight: 600;
+}
+
+/* ------------------------------------------------------------- */
+
+.displayText {
+    height: 90%; 
+    justify-items: center;
+    animation: fadeInYear 1.5s ease-out;
+
+    h3 {
+        padding: 1%;
+        margin: 0;
+        font-size: xx-large;
+    }
+}
+
+@keyframes fadeInYear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* EVENTS SECTION */
+
+.activeYearEvents {
+    margin: auto;
+    padding: 1%;
+    width: 90%;
+
+    text-align: left;
+
+    li {
+        padding: 1%
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* TABLE - RECORDS SECTION */
+
+.activeYearRecordsTable {
+    width: 90%;
+    margin: 2%;
+}
+
+.activeYearRecordsTable img {
+    width: 50%;
+    padding: 2%;
+}
+
+.activeYearRecordsTable th:nth-child(1) {
+    width: 20%;
+}
+
+.activeYearRecordsTable th:nth-child(2) {
+    width: 15%;
+}
+
+.activeYearRecordsTable th:nth-child(3) {
+    width: 15%;
+}
+
+.activeYearRecordsTable th:nth-child(4) {
+    width: 15%;
+}
+
+.activeYearRecordsTable th:nth-child(5) {
+    width: 35%;
+}
+
+/* ------------------------------------------------------------- */

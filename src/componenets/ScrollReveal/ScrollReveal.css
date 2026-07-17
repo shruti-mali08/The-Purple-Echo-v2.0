@@ -1,0 +1,19 @@
+.revealSection {
+    opacity: 0;
+    transform: translateY(50px); 
+
+    /* NOTES
+        cubic-bezier: function defines a custom easing curve
+        
+        cubic-bezier(x1, y1, x2, y2)
+                x1 and x2 = animation duration (start to end) - must be between 0 & 1
+                y1 and y2 = animation progress
+    */
+    transition: opacity 0.5s ease-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.isVisible {
+    opacity: 1;
+    transform: translateY(0);
+}
